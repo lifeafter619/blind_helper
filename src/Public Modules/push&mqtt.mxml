@@ -1,0 +1,155 @@
+<!--mPythonType:0-->
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <block type="mpython3_button_event" id="yNr7ZVQ!c-C{_wdr+QFf" x="-463" y="-613">
+    <field name="BUTTON">a</field>
+    <field name="ACTION">pressed</field>
+    <next>
+      <block type="mpython_display_fill" id="2^t7AEve|lDWX((Ddd9A">
+        <field name="display_fill">fill(0)</field>
+        <next>
+          <block type="mpython_display_Show" id="qg*cE?+T4Vk+F/.LB4@_">
+            <next>
+              <block type="mpython3_init_wifi" id="d{[8n+n8`*/xv58^Yuv[">
+                <field name="ssid">guagua</field>
+                <field name="password">feng1003</field>
+                <next>
+                  <block type="mpython_display_DispChar_5lines" id="w,v{y`50]v`lAhBowZ~*">
+                    <field name="TEXTMODE">1</field>
+                    <field name="AUTORETURN">False</field>
+                    <value name="DispChar_5lines">
+                      <shadow type="mpython_4_lines" id="KM]RewA}-$o9)1@0?*Kh">
+                        <field name="mpython_4_lines">1</field>
+                      </shadow>
+                    </value>
+                    <value name="message">
+                      <shadow type="text" id="aQ%aoGHIc~3k|w{Ut9o}">
+                        <field name="TEXT">Hello, world!</field>
+                      </shadow>
+                      <block type="mpython_WiFi_config" id="KAIub+ZwQ!4PMOwOF(RC">
+                        <field name="WiFi_config">0</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+  <block type="mpython_main" id="}td@i!{uBv@;qVfggg7!" x="-487" y="-387">
+    <next>
+      <block type="mpython3_init_wifi" id=")_5Srl48el``gEz5%vKN">
+        <field name="ssid">guagua</field>
+        <field name="password">feng1003</field>
+      </block>
+    </next>
+  </block>
+  <block type="mpython3_button_event" id="Z^i;39@4nc?5O{lr0^ra" x="-213" y="-263">
+    <field name="BUTTON">b</field>
+    <field name="ACTION">pressed</field>
+    <next>
+      <block type="mpython_urequests_get_post" id="d~s-b!bzSLoh4dyrMQU,">
+        <field name="method">post</field>
+        <value name="url">
+          <shadow type="text" id="7||LxN{#a$G~/R%bO17r">
+            <field name="TEXT">https://sctapi.ftqq.com/SCT67151To5MgCyvZasvTWG0McSVw1hEM.send</field>
+          </shadow>
+        </value>
+        <value name="json">
+          <block type="dict_create_with_items_insert" id=":#d1]hX[~u#~*oLQ0==Y">
+            <mutation xmlns="http://www.w3.org/1999/xhtml" items="4"></mutation>
+            <field name="KEY0">title</field>
+            <field name="KEY1">desp</field>
+            <field name="KEY2">short</field>
+            <field name="KEY3">channel</field>
+            <value name="ADD0">
+              <block type="text" id="9PClPYq(~4sU~AT#BTen">
+                <field name="TEXT">test</field>
+              </block>
+            </value>
+            <value name="ADD1">
+              <block type="text" id="eiGvLq7;PR#Q_BLn0ah(">
+                <field name="TEXT">该消息来自掌控板发送</field>
+              </block>
+            </value>
+            <value name="ADD2">
+              <block type="text" id="[XpO_.{Q|Cf84Q@IKYXY">
+                <field name="TEXT">这个显示在卡片</field>
+              </block>
+            </value>
+            <value name="ADD3">
+              <block type="text" id="[I3Nl8yy5GIc9|bfcjlD">
+                <field name="TEXT">9</field>
+              </block>
+            </value>
+          </block>
+        </value>
+      </block>
+    </next>
+  </block>
+  <block type="mpython3_touchpad_event" id="zKXJ7kH@FWwJlZW^!Zi3" x="-463" y="-62">
+    <field name="BUTTON">y</field>
+    <field name="ACTION">pressed</field>
+    <next>
+      <block type="mpython_display_Show" id="EER.0R:P}LX/.1X+t_gb">
+        <next>
+          <block type="mpython_display_DispChar_5lines" id="Qz~GQsa}TtjpG/aEz2?_">
+            <field name="TEXTMODE">1</field>
+            <field name="AUTORETURN">False</field>
+            <value name="DispChar_5lines">
+              <shadow type="mpython_4_lines" id="e%1GcAOM7*ZtOP~*0vso">
+                <field name="mpython_4_lines">1</field>
+              </shadow>
+            </value>
+            <value name="message">
+              <shadow type="text" id="mrBKb@LA@4cUP![AxqJ[">
+                <field name="TEXT">向ipad发送</field>
+              </shadow>
+            </value>
+            <next>
+              <block type="mpython_urequests_get_post" id="tdn#@L#.HB)mnFR4SNJ[">
+                <field name="method">post</field>
+                <value name="url">
+                  <shadow type="text" id="wn?q@$Htl|))qZ;bhOJC">
+                    <field name="TEXT">https://api.day.app/push</field>
+                  </shadow>
+                </value>
+                <value name="json">
+                  <block type="dict_create_with_items_insert" id="gj:xaA|%$Payco$iOfZ)">
+                    <mutation xmlns="http://www.w3.org/1999/xhtml" items="4"></mutation>
+                    <field name="KEY0">title</field>
+                    <field name="KEY1">body</field>
+                    <field name="KEY2">device_key</field>
+                    <field name="KEY3">group</field>
+                    <value name="ADD0">
+                      <block type="text" id="x{)hNViqfuLhWb4/Ka)v">
+                        <field name="TEXT">test</field>
+                      </block>
+                    </value>
+                    <value name="ADD1">
+                      <block type="text" id="Gj+7DhR$v)GSV#;$Z;/A">
+                        <field name="TEXT">该消息来自掌控板</field>
+                      </block>
+                    </value>
+                    <value name="ADD2">
+                      <block type="text" id="K_/(w_PH`xf/3MsxD9RE">
+                        <field name="TEXT">QWkieiJTbsPSrjF2EATd6J</field>
+                      </block>
+                    </value>
+                    <value name="ADD3">
+                      <block type="text" id="shGO4f%L%*DJ58A=4O)W">
+                        <field name="TEXT">掌控板通知</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>
